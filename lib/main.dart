@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:online_exam_app/core/routes/app_routes.dart';
 import 'package:online_exam_app/core/routes/routes.dart';
 import 'package:online_exam_app/core/theme/app_theme.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget{
       onGenerateRoute: Routes.generateRoute,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: const Locale("ar"),
+      locale: const Locale("en"),
 
     );
   }

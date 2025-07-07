@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_exam_app/core/l10n/translation/app_localizations.dart';
 import 'package:online_exam_app/core/routes/app_routes.dart';
+import 'package:online_exam_app/features/login/presentation/views/screens/login.dart';
 
 abstract class Routes {
 
@@ -8,20 +9,12 @@ abstract class Routes {
     final url = Uri.parse(settings.name ?? "/");
 
     switch (url.path) {
-      case AppRoutes.home:
+      case AppRoutes.login:
+        return MaterialPageRoute(builder: (context) => const loginScreen());
 
       default:
-        return MaterialPageRoute(
-          builder: (context) => Scaffold(body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Row(),
-              Center(child: Text(AppLocalizations.of(context)!.appName)),
-              FilledButton(onPressed: () {}, child: Text("Test")),
-            ],
-          )),
-        );
+        return MaterialPageRoute(builder: (context) => const loginScreen());
+
     }
   }
 }
