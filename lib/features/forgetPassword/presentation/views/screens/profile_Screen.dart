@@ -10,7 +10,7 @@ class ProfileScreen extends StatelessWidget {
           automaticallyImplyLeading: false,
           title: Text("Profile", style: TextStyle(
             fontSize: 26,
-            fontWeight: FontWeight.w700
+            fontWeight: FontWeight.w600
           ),),
         ),
     );
