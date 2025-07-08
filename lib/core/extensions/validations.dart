@@ -12,4 +12,10 @@ abstract class Validations {
 
     return passwordRegExp.hasMatch(password);
   }
+
+  static bool validateUsername(String username) {
+    final RegExp usernameRegExp = RegExp(r'^[a-zA-Z0-9_]{3,20}$');
+    return usernameRegExp.hasMatch(username);
+  }
+
 }

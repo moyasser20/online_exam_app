@@ -3,6 +3,7 @@ import 'package:online_exam_app/core/Assets/app_assets.dart';
 import 'package:online_exam_app/core/Widgets/custom_text_field.dart';
 import 'package:online_exam_app/core/extensions/extensions.dart';
 import 'package:online_exam_app/core/extensions/validations.dart';
+import 'package:online_exam_app/core/routes/app_routes.dart';
 import 'package:online_exam_app/core/theme/app_colors.dart';
 
 import '../../../../../core/Widgets/Custome_Elevated_Button.dart';
@@ -58,7 +59,7 @@ class _loginScreenState extends State<loginScreen> {
         ),
         title: const Text(
           "Login",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
         ),
       ),
       body: Form(
@@ -92,7 +93,7 @@ class _loginScreenState extends State<loginScreen> {
                 }
                 return null;
               },
-            ).setHorizontalAndVerticalPadding(context, 0.03, 0.003),
+            ).setHorizontalAndVerticalPadding(context, 0.03, 0.005),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -128,7 +129,7 @@ class _loginScreenState extends State<loginScreen> {
               onPressed: isFormValid
                   ? () {
                 if (_formState.currentState!.validate()) {
-                  print("Login Successful ✅");
+                  print("Login Successful");
                 }
               }
                   : null,
@@ -143,14 +144,15 @@ class _loginScreenState extends State<loginScreen> {
                   style: TextStyle(fontSize: 16),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, AppRoutes.SignUp);
+                  },
                   child: const Text(
                     "Sign up",
                     style: TextStyle(
                         decoration: TextDecoration.underline, fontSize: 18),
                   ),
                 ),
-                Text("tEST")
               ],
             )
           ],

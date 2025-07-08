@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../theme/app_colors.dart';
+
 class CustomeTextFormField extends StatefulWidget {
   final TextEditingController? controller;
   final String? Function(String?)? validator;
@@ -42,7 +44,14 @@ class _CustomeTextFormFieldState extends State<CustomeTextFormField> {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
         labelText: widget.label,
+        labelStyle: TextStyle(
+          color: AppColors.black,
+          fontWeight: FontWeight.w400
+        ),
         hintText: widget.hint,
+        hintStyle: TextStyle(
+          color: AppColors.grey.withOpacity(0.4)
+        ),
         border: const OutlineInputBorder(),
         errorStyle:  const TextStyle(color: Colors.red, fontSize: 12)
       ),

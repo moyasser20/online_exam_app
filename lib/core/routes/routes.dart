@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:online_exam_app/core/l10n/translation/app_localizations.dart';
 import 'package:online_exam_app/core/routes/app_routes.dart';
+import 'package:online_exam_app/features/forgetPassword/presentation/views/screens/profile_Screen.dart';
 import 'package:online_exam_app/features/login/presentation/views/screens/login.dart';
+
+import '../../features/signUp/presentation/views/screens/signUp.dart';
 
 abstract class Routes {
 
@@ -11,7 +13,11 @@ abstract class Routes {
     switch (url.path) {
       case AppRoutes.login:
         return MaterialPageRoute(builder: (context) => const loginScreen());
+      case AppRoutes.SignUp:
+        return MaterialPageRoute(builder: (context) => const SignupScreen());
 
+      case AppRoutes.profile:
+        return MaterialPageRoute(builder: (context) => const ProfileScreen());
       default:
         return MaterialPageRoute(builder: (context) => const loginScreen());
 
