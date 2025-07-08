@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:online_exam_app/core/routes/app_routes.dart';
-import 'package:online_exam_app/features/forgetPassword/presentation/views/screens/profile_Screen.dart';
 import 'package:online_exam_app/features/login/presentation/views/screens/login.dart';
 
+import '../../features/Profile/presentation/views/screens/profile_Screen.dart';
 import '../../features/signUp/presentation/views/screens/signUp.dart';
 
 abstract class Routes {
