@@ -10,14 +10,14 @@ class CustomeElevatedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 343,
-      height: 48,
+      width: 373,
+      height: 52,
       child: ElevatedButton(onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             backgroundColor: color ?? AppColors.blue,
             padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25),
+              borderRadius: BorderRadius.circular(22),
             ),
             textStyle: TextStyle(
               fontSize: 16,
