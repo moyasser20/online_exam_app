@@ -59,7 +59,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               label: "Confirm Password",
               hint: "Confirm password",
             ),
-            const SizedBox(height: 45),
+            const SizedBox(height: 45 ),
             CustomeElevatedButton(
               text: "Continue",
               onPressed: isFormValid
