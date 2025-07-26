@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_exam_app/core/routes/app_routes.dart';
+import 'package:online_exam_app/features/exams/presenation/screens/exam_score_screen.dart';
+import 'package:online_exam_app/features/exams/presenation/screens/question_screen.dart';
 import 'package:online_exam_app/features/forgetPassword/presentation/views/screens/email_varificationScreen.dart';
 import 'package:online_exam_app/features/forgetPassword/presentation/views/screens/forgertPasswordScreen.dart';
 import 'package:online_exam_app/features/login/presentation/views/screens/login.dart';
@@ -28,6 +30,13 @@ abstract class Routes {
 
       case AppRoutes.profile:
         return MaterialPageRoute(builder: (context) => const ProfileScreen());
+      case AppRoutes.questionsScreen:
+        return MaterialPageRoute(builder: (context) => const QuestionScreen());
+
+      case AppRoutes.examScoreScreen:
+        return MaterialPageRoute(builder: (context) => const ExamScoreScreen(correctAnswer: 10, totalQuestion: 10,));
+
+
       default:
         return MaterialPageRoute(builder: (context) => const loginScreen());
 
