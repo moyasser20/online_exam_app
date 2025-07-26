@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:online_exam_app/core/Assets/app_assets.dart';
 import 'package:online_exam_app/core/Widgets/Custome_Elevated_Button.dart';
 import 'package:online_exam_app/core/extensions/extensions.dart';
+import 'package:online_exam_app/core/routes/app_routes.dart';
 import 'package:online_exam_app/core/theme/app_colors.dart';
 import '../widgets/score_summery_widget.dart';
 
@@ -37,7 +38,9 @@ class ExamScoreScreen extends StatelessWidget {
           const SizedBox(height: 30),
           ScoreSummary(correct: correctAnswer, total: totalQuestion),
           const SizedBox(height: 70),
-          CustomeElevatedButton(text: "Show results", onPressed: () {}, color: AppColors.blue, textColor: AppColors.white,).setHorizontalPadding(context, 0.03),
+          CustomeElevatedButton(text: "Show results", onPressed: () {
+            Navigator.of(context).pushNamed(AppRoutes.layout);
+          }, color: AppColors.blue, textColor: AppColors.white,).setHorizontalPadding(context, 0.03),
           const SizedBox(height: 30),
           CustomeElevatedButton(text: "Start again", onPressed: () {}, color: AppColors.white, textColor: AppColors.blue, borderColor: AppColors.blue,).setHorizontalPadding(context, 0.03),
         ],
