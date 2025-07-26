@@ -1,19 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:online_exam_app/core/Assets/app_assets.dart';
 import 'package:online_exam_app/core/Widgets/Custome_Elevated_Button.dart';
 import 'package:online_exam_app/core/Widgets/custom_text_field.dart';
 import 'package:online_exam_app/core/extensions/extensions.dart';
 import 'package:online_exam_app/core/theme/app_colors.dart';
 
-class ProfileScreen extends StatefulWidget {
+class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
-
-  @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
-}
-
-class _ProfileScreenState extends State<ProfileScreen> {
-  int selectedindex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -25,26 +17,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: _onNavbarSelectedIndex,
-        currentIndex: selectedindex,
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: AppColors.lightBlue,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined, color: AppColors.blue),
-            label: "Explore",
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset(AppAssets.secondnavbar, color: AppColors.blue),
-            label: "Result",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_2_outlined, color: AppColors.blue),
-            label: "Profile",
-          ),
-        ],
-      ),
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -112,10 +85,5 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
       ),
     );
-  }
-
-  _onNavbarSelectedIndex(int index) {
-    selectedindex = index;
-    setState(() {});
   }
 }

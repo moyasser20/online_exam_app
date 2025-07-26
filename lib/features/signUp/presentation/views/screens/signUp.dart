@@ -74,7 +74,7 @@ class SignupScreen extends StatelessWidget {
           ).setHorizontalAndVerticalPadding(context, 0.05, 0.005),
           const SizedBox(height: 50),
           CustomeElevatedButton(text: "Signup", onPressed: () {
-            Navigator.pushNamed(context, AppRoutes.profile);
+            Navigator.pushNamed(context, AppRoutes.layout);
           }),
           const SizedBox(height: 20),
           Row(

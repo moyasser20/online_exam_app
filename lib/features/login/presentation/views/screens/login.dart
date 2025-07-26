@@ -132,6 +132,7 @@ class _loginScreenState extends State<loginScreen> {
                   ? () {
                 if (_formState.currentState!.validate()) {
                   print("Login Successful");
+                  Navigator.pushNamed(context, AppRoutes.layout);
                 }
               }
                   : null,
