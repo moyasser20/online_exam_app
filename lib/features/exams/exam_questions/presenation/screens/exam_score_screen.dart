@@ -39,7 +39,7 @@ class ExamScoreScreen extends StatelessWidget {
           ScoreSummary(correct: correctAnswer, total: totalQuestion),
           const SizedBox(height: 70),
           CustomeElevatedButton(text: "Show results", onPressed: () {
-            Navigator.of(context).pushNamed(AppRoutes.layout);
+            Navigator.of(context).pushNamed(AppRoutes.resultScreen);
           }, color: AppColors.blue, textColor: AppColors.white,).setHorizontalPadding(context, 0.03),
           const SizedBox(height: 30),
           CustomeElevatedButton(text: "Start again", onPressed: () {}, color: AppColors.white, textColor: AppColors.blue, borderColor: AppColors.blue,).setHorizontalPadding(context, 0.03),
