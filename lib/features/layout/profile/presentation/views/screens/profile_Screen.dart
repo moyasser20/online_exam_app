@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:online_exam_app/core/Widgets/Custome_Elevated_Button.dart';
 import 'package:online_exam_app/core/Widgets/custom_text_field.dart';
 import 'package:online_exam_app/core/extensions/extensions.dart';
+import 'package:online_exam_app/core/routes/app_routes.dart';
 import 'package:online_exam_app/core/theme/app_colors.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -80,7 +81,9 @@ class ProfileScreen extends StatelessWidget {
               hint: "13212312",
             ).setHorizontalAndVerticalPadding(context,0.05,0.003),
             const SizedBox(height: 50,),
-            CustomeElevatedButton(text: "Update", onPressed: (){})
+            CustomeElevatedButton(text: "Update", onPressed: (){
+              Navigator.of(context).pushNamed(AppRoutes.questionsScreen);
+            })
           ],
         ),
       ),

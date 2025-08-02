@@ -1,5 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:online_exam_app/core/routes/app_routes.dart';
 import 'package:online_exam_app/core/routes/routes.dart';
@@ -19,6 +18,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
+      initialRoute: AppRoutes.resultScreen,
       onGenerateRoute: Routes.generateRoute,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
