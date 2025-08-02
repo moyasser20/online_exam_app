@@ -6,7 +6,9 @@ class CustomeTextFormField extends StatefulWidget {
   final TextEditingController? controller;
   final String? Function(String?)? validator;
   final void Function(String)? onChanged;
+  final VoidCallback? onPressed;
   final String? label;
+  final String? initialText; // for profile
   final String? hint;
   final String? suffixText; // only shows suffix, no tap handler
   final bool isPassword;
@@ -26,6 +28,8 @@ class CustomeTextFormField extends StatefulWidget {
     this.keyboardType = TextInputType.text,
     this.enabled = true,
     this.readonly = false,
+    this.initialText,
+    this.onPressed,
   });
 
   @override
@@ -39,6 +43,12 @@ class _CustomeTextFormFieldState extends State<CustomeTextFormField> {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: widget.controller,
+      initialValue: widget.initialText,
+      style: TextStyle(
+        color: AppColors.black,
+        fontWeight: FontWeight.w400,
+        fontSize: 18,
+      ),
       enabled: widget.enabled,
       readOnly: widget.readonly,
       obscureText: widget.isPassword ? obscureText : false,
@@ -52,20 +62,25 @@ class _CustomeTextFormFieldState extends State<CustomeTextFormField> {
           color: AppColors.black,
           fontWeight: FontWeight.w400,
         ),
-        hintText: widget.hint,
-        hintStyle: TextStyle(
-          color: AppColors.grey.withOpacity(0.4),
+        disabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: AppColors.black),
         ),
-        suffix: widget.suffixText != null
-            ? Text(
-          widget.suffixText!,
-          style: TextStyle(
-            color: AppColors.blue[30],
-            fontWeight: FontWeight.w500,
-            decoration: TextDecoration.underline,
-          ),
-        )
-            : null,
+        hintText: widget.hint,
+        hintStyle: TextStyle(color: AppColors.grey.withOpacity(0.4)),
+        suffix:
+            widget.suffixText != null
+                ? GestureDetector(
+                  onTap: widget.onPressed ?? (){},
+                  child: Text(
+                    widget.suffixText!,
+                    style: TextStyle(
+                      color: AppColors.blue,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14,
+                    ),
+                  ),
+                )
+                : null,
         border: const OutlineInputBorder(),
         errorStyle: const TextStyle(color: Colors.red, fontSize: 12),
       ),

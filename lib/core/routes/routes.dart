@@ -10,6 +10,7 @@ import '../../features/exams/exam_questions/presenation/screens/question_screen.
 import '../../features/exams/exam_subject/presentation/views/screens/exam_details_screen.dart';
 import '../../features/exams/exam_subject/presentation/views/screens/exams_screen.dart';
 import '../../features/forgetPassword/presentation/views/screens/ResetPassword.dart';
+import '../../features/layout/profile/presentation/views/screens/change_password_screen.dart';
 import '../../features/layout/profile/presentation/views/screens/profile_Screen.dart';
 import '../../features/layout/result/presentation/views/screens/answer_screen.dart';
 import '../../features/layout/result/presentation/views/screens/result_screen.dart';
@@ -35,6 +36,9 @@ abstract class Routes {
 
       case AppRoutes.profile:
         return MaterialPageRoute(builder: (context) => const ProfileScreen());
+      case AppRoutes.changePassword:
+        return MaterialPageRoute(builder: (context) => const ChangePasswordScreen());
+
       case AppRoutes.questionsScreen:
         return MaterialPageRoute(builder: (context) => const QuestionScreen());
 
